@@ -5,7 +5,7 @@ pieces = {
     'king': {
         'character': "king",
         'range': 1,
-        'forwards': False,
+        'forwards': True,
         'backwards': True,  
         'left_right': True,
         'diagonal': True,           
@@ -14,7 +14,7 @@ pieces = {
     'queen': {
         'character': "queen",
         'range': 8,
-        'forwards': False,
+        'forwards': True,
         'backwards': True,
         'left_right': True,
         'diagonal': True,
@@ -32,7 +32,7 @@ pieces = {
     'rook': {
         'character': "rook",
         'range': 8,
-        'forwards': False,
+        'forwards': True,
         'backwards': True,
         'left_right': True,
         'diagonal': False,
@@ -41,7 +41,7 @@ pieces = {
     'pawn': {
         'character': "pawn",
         'range': 1,
-        'forwards': False,
+        'forwards': True,
         'backwards': False,
         'left_right': False,
         'diagonal': False, # For now false but in future try = cond on overtake.
@@ -50,7 +50,7 @@ pieces = {
     'knight': {
         'character': "knight",
         'range': 1,
-        'forwards': False,
+        'forwards': True,
         'backwards': True,
         'left_right': True,
         'diagonal': True,
@@ -137,7 +137,7 @@ def possible_move_diagonal():
 
 
 def find_characters_moves(character_input):
-    if pieces[character_input]['backwards']:
+    if pieces[character_input]['forwards']:
         possible_moves_forward()
     if pieces[character_input]['backwards']:
         possible_moves_backward()
